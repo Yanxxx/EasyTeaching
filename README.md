@@ -1,7 +1,7 @@
 # EasyTeaching: Teach robot to learn manipulation tasks with limited amount of human operated task demonstrations
-Tasks other than the pick and place task are common in daily life and industrial setup. 
 This work is done in 2021. 
 
+Tasks other than the pick and place task are common in daily life and industrial setup. 
 
 ![Trajectory tasks](./images/image17.gif)
 ![Trajectory tasks](./images/image14.gif)
@@ -11,7 +11,7 @@ This work is done in 2021.
 
 Teach robot with these tasks are challenging. We proposed a novel teaching paradigm for the robot to learn the trajectory type tasks. 
 
-![Overview of the traing method](./image/overview.png)
+![Overview of the traing method](./images/overview.png)
 
 In this method, we seperate it into three parts:
 1. The keyframe identification method to evaluate the demonstrated data.
