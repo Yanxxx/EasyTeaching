@@ -5,7 +5,7 @@ Other than the pick and place task, tasks that reply on the operating trajectori
 
 <img src="./images/image14.gif" width="250" />  <img src="./images/image15.gif" width="250" />  <img src="./images/image17.gif" width="250" />
 
-#### Problem setup
+#### Problem setup & Solution
 Teach robot with the trajectory tasks are challenging.
 1. Noisy demonstration data:\
   a. Human operator usually have operation habits.\
