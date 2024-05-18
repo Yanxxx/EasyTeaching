@@ -6,7 +6,7 @@ Other than the pick and place task, tasks that reply on the operating trajectori
 <img src="./images/image14.gif" width="250" />  <img src="./images/image15.gif" width="250" />  <img src="./images/image17.gif" width="250" />
 
 #### Problem setup
-Teach robot with these tasks are challenging.
+Teach robot with the trajectory tasks are challenging.
 1. Noisy demonstration data:\
   a. Human operator usually have operation habits.\
   b. Explored trajectory is noisy.
@@ -30,25 +30,50 @@ In order to tackle those challenges, we proposed a novel teaching paradigm for t
 #### The overview of the proposed method is shown in following figure. 
 ![Overview of the traing method](./images/overview.png)
 
-In this method, we seperate it into three parts:
+The method is seperated into three parts:
 1. The keyframe identification method to evaluate the demonstrated data.
 2. A reinforcement learning based task exploration and learn from the demonsrated data. 
 3. To avoid the ambiguity of image input, we introduced the latent space for the goal generation and robot state representation.
 
+Our approach leverages keyframe identification to train policies via reinforcement learning. These policies generate new trajectories that classify new training data for keyframe identification. To reduce computational load and exploration ambiguity, we condense image features into a latent space using the latent space module. This module is trained separately to optimize performance.
+
 #### Keyframe evaluation from demonstrated task episode. 
 
-<img src="./images/problem-discription.png" width="600" /> 
-The green dots are the operator inputs. The blue dots is the robot trajectory collected from the robot contoller. The red dots are the evaluted keyframe for the task. The green dots are drifted away from the robot trajectory, this is because the human teleoperated the robot and fix the robot movement while operating.
+We employed a keyframe evaluation approach that involves modeling the task as a shortest path problem from the start state to the goal state. To solve this problem, we utilized a dynamic programming-based reinforcement learning method.
+
+<img src="./images/problem-discription.png" width="600" /> \
+The illustration depicts three types of data points: \
+* Green dots: Operator inputs that guide the robot's movement. \
+* Blue dots: Robot trajectories collected from the robot controller. \
+* Red dots: Evaluated keyframes for the task.
+
+Notably, the green dots have drifted away from the blue dots, indicating that human operators teleoperated the robot and fine-tuned its movement while performing the task.
 
 #### The reinforcement learning framework.
 
+Our reinforcement learning framework consists of two policies: a keyframe policy and a primitive policy.
+
+The keyframe policy is trained to generate the optimal keyframe for a task given the current state and final goal state. In contrast, the primitive policy learns to generate actions for the robot to execute by considering the current state and the keyframe as a subgoal of the task.
+
+To facilitate learning, we employ a latent space module that encodes states, subgoals, and goals into a compact representation. This allows our policies to make informed decisions based on the relationships between these entities.
+
+The framework is shown in following figure. 
+
 ![The reinforcement learning framework](./images/reinforcement-learning.png)
 
+
+
 #### The latent space generation.
+
+Our latent space module is trained using Variational Autoencoders (VAEs) to reduce the search domain for robot exploration. This allows us to condense high-dimensional sensory inputs into a lower-dimensional representation.
+
+To achieve this, we trained our VAE model on a dataset consisting of data collected during both human demonstrations and robot explorations. This enables the latent space module to learn meaningful representations that can effectively guide the robot's exploration strategy.
+
 ![The latent space generation.](./images/latent-space.png)
 
 
-#### Use this method, we did the experiment with the excavation task. 
+#### Experiments and Results 
+Use this method, we did the experiment with the excavation task. 
 
 Human operated task demonstration
 
