@@ -86,7 +86,7 @@ Use this method, we did the experiment with the excavation task.
 
 <img src="./images/image140.png" width="600" /> 
 
-#### We also did ablation study on the hyperparameters:
+#### We also did ablation study on the hyperparameters (the length of the encoded latent space):
 
 ![Ablation Study.](./images/ablation-study.png)
 
