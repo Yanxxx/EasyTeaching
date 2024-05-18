@@ -28,13 +28,16 @@ The latent space generation.
 
 
 Use this method, we did the experiment with the excavation task. 
-![Human operated task demonstration.](./images/image37.gif)
 
-![Trained model operated task operation.](./images/image47.gif)
+Human operated task demonstration
+
+<img src="./images/image37.gif" width="500" /> 
+<img src="./images/image47.gif" width="500" />
+
 
 The success rate is of our method is shown below:
 
-![Task success rate.](./images/image140.png)
+<img src="./images/image140.png" width="800" /> 
 
 We also did ablation study on the hyperparameters:
 
