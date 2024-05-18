@@ -45,9 +45,9 @@ We employed a keyframe evaluation approach that involves modeling the task as a 
 
 
 
-The illustration depicts three types of data points: \
-* Green dots: Operator inputs that guide the robot's movement. \
-* Blue dots: Robot trajectories collected from the robot controller. \
+The illustration depicts three types of data points: 
+* Green dots: Operator inputs that guide the robot's movement. 
+* Blue dots: Robot trajectories collected from the robot controller. 
 * Red dots: Evaluated keyframes for the task.
 
 Notably, the green dots have drifted away from the blue dots, indicating that human operators teleoperated the robot and fine-tuned its movement while performing the task.
