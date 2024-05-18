@@ -1,15 +1,15 @@
 # EasyTeaching: Teach Robot to Learn Manipulation Tasks with Limited Amount of Human Operated Task Demonstrations
 This work was done in 2021. 
 
-Other than the pick and place task are common in daily life and industrial setup. 
+Other than the pick and place task, tasks that reply on the operating trajectories are common in daily life and industrial setup. 
 
 <img src="./images/image14.gif" width="250" />  <img src="./images/image15.gif" width="250" />  <img src="./images/image17.gif" width="250" />
 
 #### Teach robot with these tasks are challenging.
 
-#### 1. Noisy demonstration data
-##### Human operator usually have operation habits 
-##### Explored trajectory is noisy 
+1. Noisy demonstration data:
+  Human operator usually have operation habits.
+  Explored trajectory is noisy.
 #### 2. Low random exploring success rate
 ##### Too many constraints on each trajectory, the computation will explode
 ##### With low random exploration success rate, it is nearly impossible to find a feasible episode within a reasonable time steps
