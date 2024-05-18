@@ -5,27 +5,27 @@ Other than the pick and place task, tasks that reply on the operating trajectori
 
 <img src="./images/image14.gif" width="250" />  <img src="./images/image15.gif" width="250" />  <img src="./images/image17.gif" width="250" />
 
-#### Teach robot with these tasks are challenging.
-
+#### Problem setup
+Teach robot with these tasks are challenging.
 1. Noisy demonstration data:
-  Human operator usually have operation habits.
-  Explored trajectory is noisy.
-#### 2. Low random exploring success rate
-##### Too many constraints on each trajectory, the computation will explode
-##### With low random exploration success rate, it is nearly impossible to find a feasible episode within a reasonable time steps
-#### 3. Limited demonstration episodes 
-##### Collecting vast amount of demonstration is expensive 
+  a. Human operator usually have operation habits.
+  b. Explored trajectory is noisy.
+2. Low random exploring success rate
+  a. Too many constraints on each trajectory, the computation will explode
+  b. With low random exploration success rate, it is nearly impossible to find a feasible episode within a reasonable time steps
+3. Limited demonstration episodes 
+  a. Collecting vast amount of demonstration is expensive 
 
 In order to tackle those challenges, we proposed a novel teaching paradigm for the robot to learn the trajectory type tasks. 
-#### 1. Keyframe identification from demonstration 
-##### Identify the keyframe from sampled actions 
-#### 2. Goal conditioned keyframe guided trajectory generation 
-##### Utilize the keyframe information to train a reinforcement learning policy to generate trajectory 
-##### Use hierarchical structure to overcome the low random exploration success rate problem 
-#### 3. Vision based trajectory generation with Latent space exploration
-##### RGB-D sensor data as system input 
-##### Encode image information into latent space 
-##### Gravity data alignment 
+1. Keyframe identification from demonstration 
+  a. Identify the keyframe from sampled actions 
+2. Goal conditioned keyframe guided trajectory generation 
+  a. Utilize the keyframe information to train a reinforcement learning policy to generate trajectory 
+  b. Use hierarchical structure to overcome the low random exploration success rate problem 
+3. Vision based trajectory generation with Latent space exploration
+  a. RGB-D sensor data as system input 
+  b. Encode image information into latent space 
+  c. Gravity data alignment 
 
 #### The overview of the proposed method is shown in following figure. 
 ![Overview of the traing method](./images/overview.png)
