@@ -16,7 +16,7 @@ In this method, we seperate it into three parts:
 
 Keyframe evaluation from demonstrated task episode. 
 
-![Keyframe](./images/problem-discription.png)
+<img src="./images/problem-discription.png" width="800" /> 
 The green dots are the operator inputs. The blue dots is the robot trajectory collected from the robot contoller. The red dots are the evaluted keyframe for the task. The green dots are drifted away from the robot trajectory, this is because the human teleoperated the robot and fix the robot movement while operating.
 
 The reinforcement learning framework.
