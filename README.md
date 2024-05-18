@@ -75,17 +75,18 @@ To achieve this, we trained our VAE model on a dataset consisting of data collec
 #### Experiments and Results 
 Use this method, we did the experiment with the excavation task. 
 
-##### Human operated task demonstration \
-<img src="./images/image37.gif" width="500" /> 
-##### Trained operation by robot \
+##### Human operated task demonstration 
+<img src="./images/image37.gif" width="500" />\
+
+##### Trained operation by robot 
 <img src="./images/image47.gif" width="500" />
 
 
-The success rate is of our method is shown below:
+##### The success rate is of our method is shown below:
 
 <img src="./images/image140.png" width="600" /> 
 
-We also did ablation study on the hyperparameters:
+#### We also did ablation study on the hyperparameters:
 
 ![Ablation Study.](./images/ablation-study.png)
 
