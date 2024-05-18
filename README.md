@@ -7,25 +7,25 @@ Other than the pick and place task, tasks that reply on the operating trajectori
 
 #### Problem setup
 Teach robot with these tasks are challenging.
-1. Noisy demonstration data:
-  a. Human operator usually have operation habits.
-  b. Explored trajectory is noisy.
-2. Low random exploring success rate
-  a. Too many constraints on each trajectory, the computation will explode
-  b. With low random exploration success rate, it is nearly impossible to find a feasible episode within a reasonable time steps
-3. Limited demonstration episodes 
-  a. Collecting vast amount of demonstration is expensive 
+1. Noisy demonstration data:\
+  a. Human operator usually have operation habits.\
+  b. Explored trajectory is noisy.\
+2. Low random exploring success rate\
+  a. Too many constraints on each trajectory, the computation will explode\
+  b. With low random exploration success rate, it is nearly impossible to find a feasible episode within a reasonable time steps\
+3. Limited demonstration episodes \
+  a. Collecting vast amount of demonstration is expensive \
 
 In order to tackle those challenges, we proposed a novel teaching paradigm for the robot to learn the trajectory type tasks. 
-1. Keyframe identification from demonstration 
-  a. Identify the keyframe from sampled actions 
-2. Goal conditioned keyframe guided trajectory generation 
-  a. Utilize the keyframe information to train a reinforcement learning policy to generate trajectory 
-  b. Use hierarchical structure to overcome the low random exploration success rate problem 
-3. Vision based trajectory generation with Latent space exploration
-  a. RGB-D sensor data as system input 
-  b. Encode image information into latent space 
-  c. Gravity data alignment 
+1. Keyframe identification from demonstration \
+  a. Identify the keyframe from sampled actions \
+2. Goal conditioned keyframe guided trajectory generation \
+  a. Utilize the keyframe information to train a reinforcement learning policy to generate trajectory \
+  b. Use hierarchical structure to overcome the low random exploration success rate problem \
+3. Vision based trajectory generation with Latent space exploration\
+  a. RGB-D sensor data as system input \
+  b. Encode image information into latent space \
+  c. Gravity data alignment \
 
 #### The overview of the proposed method is shown in following figure. 
 ![Overview of the traing method](./images/overview.png)
