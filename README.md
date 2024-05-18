@@ -41,7 +41,10 @@ Our approach leverages keyframe identification to train policies via reinforceme
 
 We employed a keyframe evaluation approach that involves modeling the task as a shortest path problem from the start state to the goal state. To solve this problem, we utilized a dynamic programming-based reinforcement learning method.
 
-<img src="./images/problem-discription.png" width="600" /> \
+<img src="./images/problem-discription.png" width="600" /> 
+
+
+
 The illustration depicts three types of data points: \
 * Green dots: Operator inputs that guide the robot's movement. \
 * Blue dots: Robot trajectories collected from the robot controller. \
