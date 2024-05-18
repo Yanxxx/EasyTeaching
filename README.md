@@ -3,10 +3,10 @@ This work is done in 2021.
 
 Tasks other than the pick and place task are common in daily life and industrial setup. 
 
-![Trajectory tasks](./images/image17.gif)
-![Trajectory tasks](./images/image14.gif)
-![Trajectory tasks](./images/image15.gif)
-![Trajectory tasks](./images/image12.gif)
+![Trajectory tasks](./images/image17.gif =x250)
+![Trajectory tasks](./images/image14.gif =x250)
+![Trajectory tasks](./images/image15.gif =x250)
+![Trajectory tasks](./images/image12.gif =x250)
 
 
 Teach robot with these tasks are challenging. We proposed a novel teaching paradigm for the robot to learn the trajectory type tasks. 
