@@ -1,14 +1,12 @@
-# Teleoperation-Driven and Keyframe-Based Generalizable Imitation Learning for Construction Robots
-
 # EasyTeaching: Teach robot to learn manipulation tasks with limited amount of human operated task demonstrations
 Tasks other than the pick and place task are common in daily life and industrial setup. 
 This work is done in 2021. 
 
 
-![Trajectory tasks](./images/image17)
-![Trajectory tasks](./images/image14)
-![Trajectory tasks](./images/image15)
-![Trajectory tasks](./images/image12)
+![Trajectory tasks](./images/image17.gif)
+![Trajectory tasks](./images/image14.gif)
+![Trajectory tasks](./images/image15.gif)
+![Trajectory tasks](./images/image12.gif)
 
 
 Teach robot with these tasks are challenging. We proposed a novel teaching paradigm for the robot to learn the trajectory type tasks. 
@@ -20,11 +18,15 @@ In this method, we seperate it into three parts:
 2. A reinforcement learning based task exploration and learn from the demonsrated data. 
 3. To avoid the ambiguity of image input, we introduced the latent space for the goal generation and robot state representation.
 
+Keyframe evaluation from demonstrated task episode. The green dots are the operator inputs. The blue dots is the robot trajectory collected from the robot contoller. The red dots are the evaluted keyframe for the task. The green dots are drifted away from the robot trajectory, this is because the human teleoperated the robot and fix the robot movement while operating.
 
 ![Keyframe evaluation from demonstrated task episode. The green dots are the operator inputs. The blue dots is the robot trajectory collected from the robot contoller. The red dots are the evaluted keyframe for the task. The green dots are drifted away from the robot trajectory, this is because the human teleoperated the robot and fix the robot movement while operating.](./images/problem-discription.png)
 
+The reinforcement learning framework.
+
 ![The reinforcement learning framework](./images/reinforcement-learning.png)
 
+The latent space generation.
 ![The latent space generation.](./images/latent-space.png)
 
 
