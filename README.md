@@ -37,7 +37,7 @@ Human operated task demonstration
 
 The success rate is of our method is shown below:
 
-<img src="./images/image140.png" width="800" /> 
+<img src="./images/image140.png" width="600" /> 
 
 We also did ablation study on the hyperparameters:
 
