@@ -75,9 +75,9 @@ To achieve this, we trained our VAE model on a dataset consisting of data collec
 #### Experiments and Results 
 Use this method, we did the experiment with the excavation task. 
 
-Human operated task demonstration
-
+##### Human operated task demonstration \
 <img src="./images/image37.gif" width="500" /> 
+##### Trained operation by robot \
 <img src="./images/image47.gif" width="500" />
 
 
