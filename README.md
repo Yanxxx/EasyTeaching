@@ -102,6 +102,11 @@ Use this method, we did the experiment with the excavation task.
 
 ![Ablation Study.](./images/ablation-study.png)
 
+
+### Future work
+
+The latent space and demonstration can be replaced with BLIP image encoder and language encoder. Will explore more on the LLM powered robot learning. 
+
 We have submitted this work to the Journal of Computing in Civil Engineering with the following title. The article is accepted and will be published soon. I will update the link after the paper is published. 
 
 # Teleoperation-Driven and Keyframe-Based Generalizable Imitation Learning for Construction Robots
