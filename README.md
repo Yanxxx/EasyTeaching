@@ -1,11 +1,20 @@
 # EasyTeaching: Teach Robot to Learn Manipulation Tasks with Limited Amount of Human Operated Task Demonstrations
 This work was done in 2021. 
 
-Other than the pick and place task, tasks that reply on the operating trajectories are common in daily life and industrial setup. 
+### Motivation
+1. The method can hand over to non robot experts even non machine learning experts.
+2. With limited amount of demonstration data provided for the robot as learning references.
+3. Versatile: adaptable to multi-type tasks.
+
+
+### Trajectory Task: a task that need to be done by the trail of the robot passed by.
+The following figures illustrate a few trajectory tasks. 
 
 <img src="./images/image14.gif" width="250" />  <img src="./images/image15.gif" width="250" />  <img src="./images/image17.gif" width="250" />
 
-#### Problem setup & Solution
+To elabrate, the pick and place task can be treated as a special case of trajectory task.
+
+#### Problems & Solution
 Teach robot with the trajectory tasks are challenging.
 1. Noisy demonstration data:\
   a. Human operator usually have operation habits.\
