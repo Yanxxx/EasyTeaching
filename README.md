@@ -111,7 +111,7 @@ The latent space and demonstration can be replaced with BLIP image encoder and l
 ### Paper
 We have submitted this work to the Journal of Computing in Civil Engineering with the following title. The article is accepted and will be published soon. I will update the link after the paper is published. A manuscript of the paper is in the repo. This maynot be the final version. 
 
-[paper](Teleoperation-Driven and Keyframe-Based Generalizable Imitation Learning for Construction Robots.pdf)
+[paper](manuscript.pdf)
 
 # Teleoperation-Driven and Keyframe-Based Generalizable Imitation Learning for Construction Robots
 ## Abstract
