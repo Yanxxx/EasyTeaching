@@ -105,7 +105,7 @@ Use this method, we did the experiment with the excavation task.
 
 ### Future work
 
-The latent space and demonstration can be replaced with BLIP image encoder and language encoder. Will explore more on the LLM powered robot learning. 
+The latent space and demonstration can be replaced with CLIP image encoder and language encoder. Will explore more on the LLM powered robot learning. 
 
 
 ### Paper
