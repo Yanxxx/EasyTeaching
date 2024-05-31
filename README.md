@@ -40,7 +40,7 @@ In order to tackle those challenges, we proposed a novel teaching paradigm for t
 ![Overview of the traing method](./images/overview.png)
 
 The method is seperated into three parts:
-1. The keyframe identification method to evaluate the demonstrated data.
+1. The sucessed task trajectory evaluation and optimal trajectory generation with explicit method. 
 2. A reinforcement learning based task exploration and learn from the demonsrated data. 
 3. To avoid the ambiguity of image input, we introduced the latent space for the goal generation and robot state representation.
 
