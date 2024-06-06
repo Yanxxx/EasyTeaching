@@ -7,6 +7,8 @@ This work was done in 2021.
 3. Versatile: adaptable to multi-type tasks.
 
 
+
+
 ### Trajectory Task: a task that need to be done by the trail of the robot passed by.
 The following figures illustrate a few trajectory tasks. 
 
