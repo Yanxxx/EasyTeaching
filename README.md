@@ -1,42 +1,61 @@
-# EasyTeaching: Teach Robot to Learn Manipulation Tasks with Limited Amount of Human Operated Task Demonstrations
+# EasyTeaching: A Keyframe-Driven Framework for Robotic Manipulation Learning
+**Leveraging Limited Human Demonstrations to Enable Versatile Robot Training**
+
 This work was done in 2021. 
 
+### Overview
+The EasyTeaching framework is designed to empower robots to learn complex manipulation tasks using a limited number of human-operated demonstrations. Developed in 2021, the approach aims to simplify robot teaching for non-experts while overcoming common challenges such as noisy data, exploration inefficiencies, and the scarcity of demonstration episodes.
+
 ### Motivation
-1. The method can hand over to non robot experts even non machine learning experts.
-2. With limited amount of demonstration data provided for the robot as learning references.
-3. Versatile: adaptable to multi-type tasks.
+The core motivations behind EasyTeaching include:
+- **Accessibility**: Enabling non-robotics and non-machine learning experts to teach robots.
+- **Efficiency**: Utilizing a minimal set of human demonstrations to train robust robotic policies.**
+- **Versatility**: Adapting to a variety of trajectory-based tasks, such as pick-and-place and other complex maneuvers.
 
 
 
 
-### Trajectory Task: a task that need to be done by the trail of the robot passed by.
+### Defining Trajectory Tasks
+
+Trajectory tasks are those in which a robot must follow a specific path defined by a series of states or key points. For example, the pick-and-place task is a specialized form of trajectory task. Although human teleoperation provides a natural way to generate these paths, several challenges arise in practice.
 The following figures illustrate a few trajectory tasks. 
 
 <img src="./images/image14.gif" width="250" />  <img src="./images/image15.gif" width="250" />  <img src="./images/image17.gif" width="250" />
 
 To elabrate, the pick and place task can be treated as a special case of trajectory task.
 
-#### Problems & Solution
-Teach robot with the trajectory tasks are challenging.
-1. Noisy demonstration data:\
-  a. Human operator usually have operation habits.\
-  b. Explored trajectory is noisy.
-2. Low random exploring success rate\
-  a. Too many constraints on each trajectory, the computation will explode\
-  b. With low random exploration success rate, it is nearly impossible to find a feasible episode within a reasonable time steps
-3. Limited demonstration episodes \
-  a. Collecting vast amount of demonstration is expensive 
+### Challenges and Proposed Solutions
 
-In order to tackle those challenges, we proposed a novel teaching paradigm for the robot to learn the trajectory type tasks. 
-1. Keyframe identification from demonstration \
-  a. Identify the keyframe from sampled actions 
-2. Goal conditioned keyframe guided trajectory generation \
-  a. Utilize the keyframe information to train a reinforcement learning policy to generate trajectory \
-  b. Use hierarchical structure to overcome the low random exploration success rate problem 
-3. Vision based trajectory generation with Latent space exploration\
-  a. RGB-D sensor data as system input \
-  b. Encode image information into latent space \
-  c. Gravity data alignment
+#### Challenges
+1. **Noisy Demonstration Data:**
+
+- **Human Factors**: Operators have personal biases, leading to non-uniform movements.
+
+- **Inherent Noise**: The demonstrated trajectories often include extraneous or suboptimal actions.
+
+2. **Inefficient Random Exploration:**
+
+- **High Dimensionality**: Many constraints make brute-force exploration computationally expensive.
+
+- **Low Success Rate**: The probability of stumbling upon a feasible trajectory randomly is extremely low.
+
+3. **Limited Demonstration Episodes:**
+
+- **Cost of Collection**: Amassing a large dataset of demonstrations is both time-consuming and expensive.
+
+#### Solutions
+To tackle these challenges, EasyTeaching introduces a multi-faceted approach:
+
+- **Keyframe Identification:** Extracts crucial states from demonstration data to serve as milestones.
+
+- **Hierarchical Reinforcement Learning:** Divides the task into two policies:
+
+-- **Keyframe Policy:** Generates optimal keyframes based on the current state and the final goal.
+
+-- **Primitive Policy:** Executes low-level actions to reach the keyframe subgoals.
+
+- **Latent Space Representation:** Uses Variational Autoencoders (VAEs) to encode high-dimensional sensory inputs (e.g., RGB-D images) into a compact latent space, reducing computational overhead and mitigating image ambiguity.
+
 
 #### The overview of the proposed method is shown in following figure. 
 ![Overview of the traing method](./images/overview.png)
