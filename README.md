@@ -50,9 +50,9 @@ To tackle these challenges, EasyTeaching introduces a multi-faceted approach:
 
 - **Hierarchical Reinforcement Learning:** Divides the task into two policies:
 
--- **Keyframe Policy:** Generates optimal keyframes based on the current state and the final goal.
+  - **Keyframe Policy:** Generates optimal keyframes based on the current state and the final goal.
 
--- **Primitive Policy:** Executes low-level actions to reach the keyframe subgoals.
+  - **Primitive Policy:** Executes low-level actions to reach the keyframe subgoals.
 
 - **Latent Space Representation:** Uses Variational Autoencoders (VAEs) to encode high-dimensional sensory inputs (e.g., RGB-D images) into a compact latent space, reducing computational overhead and mitigating image ambiguity.
 
