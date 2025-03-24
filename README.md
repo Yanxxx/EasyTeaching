@@ -4,7 +4,7 @@
 This work was done in 2021. 
 
 ### Overview
-The EasyTeaching framework is designed to empower robots to learn complex manipulation tasks using a limited number of human-operated demonstrations. Developed in 2021, the approach aims to simplify robot teaching for non-experts while overcoming common challenges such as noisy data, exploration inefficiencies, and the scarcity of demonstration episodes.
+The EasyTeaching framework is designed to empower robots to learn complex manipulation tasks using a limited number of human-operated demonstrations. Developed in 2021, the approach aims to simplify robot teaching for **non-experts** while overcoming common challenges such as **noisy data, exploration inefficiencies, and the scarcity of demonstration episodes**.
 
 #### The overview of the proposed method is shown in following figure. 
 <p align="center">
