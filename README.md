@@ -28,19 +28,14 @@ To elabrate, the pick and place task can be treated as a special case of traject
 
 #### Challenges
 1. **Noisy Demonstration Data:**
-
   - **Human Factors**: Operators have personal biases, leading to non-uniform movements.
-
   - **Inherent Noise**: The demonstrated trajectories often include extraneous or suboptimal actions.
 
 2. **Inefficient Random Exploration:**
-
   - **High Dimensionality**: Many constraints make brute-force exploration computationally expensive.
-
   - **Low Success Rate**: The probability of stumbling upon a feasible trajectory randomly is extremely low.
 
 3. **Limited Demonstration Episodes:**
-
   - **Cost of Collection**: Amassing a large dataset of demonstrations is both time-consuming and expensive.
 
 #### Solutions
@@ -60,44 +55,39 @@ To tackle these challenges, EasyTeaching introduces a multi-faceted approach:
 
 
 #### The overview of the proposed method is shown in following figure. 
-![Overview of the traing method](./images/overview.png)
 <p align="center">
   <img src="./images/overview.png" />
 </p>
 
-1. **Keyframe Extraction and Evaluation**
+**1. Keyframe Extraction and Evaluation**
 The process begins with modeling the task as a shortest path problem—from the initial state to the goal state—using dynamic programming-based reinforcement learning. Three types of data points are considered:
-
   - **Operator Inputs (Green Dots):** Indicate the intended movement.
-
   - **Robot Trajectories (Blue Dots):** Recorded paths from the robot controller.
-
   - **Evaluated Keyframes (Red Dots):** Crucial points identified to guide the learning process.
 
   > Note: The misalignment between operator inputs and robot trajectories highlights the need for refining human demonstrations to better suit robotic control.
+<p align="center">
+  <img src="./images/problem-discription.png" width="600" /> 
+</p>
 
-<img src="./images/problem-discription.png" width="600" /> 
-
-2. **Reinforcement Learning Framework**
+**2. Reinforcement Learning Framework**
 The dual-policy framework comprises:
-
   - **Keyframe Policy:** Responsible for determining the optimal keyframe given the current robot state and the desired final state.
-
   - **Primitive Policy:** Generates the low-level actions required to transition from the current state to the determined keyframe.
 
 Both policies benefit from a latent space module that fuses state, subgoal, and goal representations, thereby simplifying the decision-making process.
+<p align="center">
+  <img src="./images/reinforcement-learning.png" /> 
+</p>
 
-![The reinforcement learning framework](./images/reinforcement-learning.png)
-
-3. **Latent Space Generation**
+**3. Latent Space Generation**
 The latent space module is trained with a VAE on a dataset that includes both human demonstration and robot exploration data. This transformation:
-
   - **Reduces Dimensionality:** Condenses high-dimensional sensory inputs to a manageable latent representation.
-
   - **Enhances Exploration:** Focuses the reinforcement learning process on the most relevant features, improving both learning speed and policy performance.
 
-![The latent space generation.](./images/latent-space.png)
-
+<p align="center">
+  <img src="./images/latent-space.png" /> 
+</p>
 
 
 #### Experimental Evaluation
@@ -116,20 +106,26 @@ The framework was validated through a series of experiments on an excavation tas
 - Ablation studies on the length of the latent space confirmed the robustness of the approach, highlighting the balance between representation detail and computational efficiency.
 
 ##### Human operated task demonstration 
-<img src="./images/image37.gif" width="500" />\
-
+<p align="center">
+  <img src="./images/image37.gif" width="500" /> 
+</p>
 ##### Trained operation by robot 
-<img src="./images/image47.gif" width="500" />
-
+ <p align="center">
+  <img src="./images/image47.gif" width="500" /> 
+</p>
 
 ##### The success rate is of our method is shown below:
-
-<img src="./images/image140.png" width="600" /> 
+ <p align="center">
+  <img src="./images/image140.png" width="600" /> 
+</p>
 
 #### We also did ablation study on the hyperparameters (the length of the encoded latent space):
 
 ![Ablation Study.](./images/ablation-study.png)
 
+ <p align="center">
+  <img src="./images/ablation-study.png" /> 
+</p>
 
 ### Future Directions
 
