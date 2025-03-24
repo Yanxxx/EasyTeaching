@@ -61,6 +61,9 @@ To tackle these challenges, EasyTeaching introduces a multi-faceted approach:
 
 #### The overview of the proposed method is shown in following figure. 
 ![Overview of the traing method](./images/overview.png)
+<p align="center">
+  <img src="./images/overview.png" />
+</p>
 
 1. **Keyframe Extraction and Evaluation**
 The process begins with modeling the task as a shortest path problem—from the initial state to the goal state—using dynamic programming-based reinforcement learning. Three types of data points are considered:
