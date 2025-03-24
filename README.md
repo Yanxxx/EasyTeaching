@@ -20,7 +20,9 @@ The core motivations behind EasyTeaching include:
 Trajectory tasks are those in which a robot must follow a specific path defined by a series of states or key points. For example, the pick-and-place task is a specialized form of trajectory task. Although human teleoperation provides a natural way to generate these paths, several challenges arise in practice.
 The following figures illustrate a few trajectory tasks. 
 
+<p align="center">
 <img src="./images/image14.gif" width="250" />  <img src="./images/image15.gif" width="250" />  <img src="./images/image17.gif" width="250" />
+</p>
 
 To elabrate, the pick and place task can be treated as a special case of trajectory task.
 
@@ -28,15 +30,15 @@ To elabrate, the pick and place task can be treated as a special case of traject
 
 #### Challenges
 1. **Noisy Demonstration Data:**
-  - **Human Factors**: Operators have personal biases, leading to non-uniform movements.
-  - **Inherent Noise**: The demonstrated trajectories often include extraneous or suboptimal actions.
+     - **Human Factors**: Operators have personal biases, leading to non-uniform movements.
+     - **Inherent Noise**: The demonstrated trajectories often include extraneous or suboptimal actions.
 
 2. **Inefficient Random Exploration:**
-  - **High Dimensionality**: Many constraints make brute-force exploration computationally expensive.
-  - **Low Success Rate**: The probability of stumbling upon a feasible trajectory randomly is extremely low.
+     - **High Dimensionality**: Many constraints make brute-force exploration computationally expensive.
+     - **Low Success Rate**: The probability of stumbling upon a feasible trajectory randomly is extremely low.
 
 3. **Limited Demonstration Episodes:**
-  - **Cost of Collection**: Amassing a large dataset of demonstrations is both time-consuming and expensive.
+     - **Cost of Collection**: Amassing a large dataset of demonstrations is both time-consuming and expensive.
 
 #### Solutions
 To tackle these challenges, EasyTeaching introduces a multi-faceted approach:
@@ -60,6 +62,7 @@ To tackle these challenges, EasyTeaching introduces a multi-faceted approach:
 </p>
 
 **1. Keyframe Extraction and Evaluation**
+
 The process begins with modeling the task as a shortest path problem—from the initial state to the goal state—using dynamic programming-based reinforcement learning. Three types of data points are considered:
   - **Operator Inputs (Green Dots):** Indicate the intended movement.
   - **Robot Trajectories (Blue Dots):** Recorded paths from the robot controller.
@@ -71,6 +74,7 @@ The process begins with modeling the task as a shortest path problem—from the 
 </p>
 
 **2. Reinforcement Learning Framework**
+
 The dual-policy framework comprises:
   - **Keyframe Policy:** Responsible for determining the optimal keyframe given the current robot state and the desired final state.
   - **Primitive Policy:** Generates the low-level actions required to transition from the current state to the determined keyframe.
@@ -81,6 +85,7 @@ Both policies benefit from a latent space module that fuses state, subgoal, and 
 </p>
 
 **3. Latent Space Generation**
+
 The latent space module is trained with a VAE on a dataset that includes both human demonstration and robot exploration data. This transformation:
   - **Reduces Dimensionality:** Condenses high-dimensional sensory inputs to a manageable latent representation.
   - **Enhances Exploration:** Focuses the reinforcement learning process on the most relevant features, improving both learning speed and policy performance.
@@ -120,8 +125,6 @@ The framework was validated through a series of experiments on an excavation tas
 </p>
 
 #### We also did ablation study on the hyperparameters (the length of the encoded latent space):
-
-![Ablation Study.](./images/ablation-study.png)
 
  <p align="center">
   <img src="./images/ablation-study.png" /> 
