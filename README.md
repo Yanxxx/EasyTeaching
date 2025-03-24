@@ -29,19 +29,19 @@ To elabrate, the pick and place task can be treated as a special case of traject
 #### Challenges
 1. **Noisy Demonstration Data:**
 
-- **Human Factors**: Operators have personal biases, leading to non-uniform movements.
+  - **Human Factors**: Operators have personal biases, leading to non-uniform movements.
 
-- **Inherent Noise**: The demonstrated trajectories often include extraneous or suboptimal actions.
+  - **Inherent Noise**: The demonstrated trajectories often include extraneous or suboptimal actions.
 
 2. **Inefficient Random Exploration:**
 
-- **High Dimensionality**: Many constraints make brute-force exploration computationally expensive.
+  - **High Dimensionality**: Many constraints make brute-force exploration computationally expensive.
 
-- **Low Success Rate**: The probability of stumbling upon a feasible trajectory randomly is extremely low.
+  - **Low Success Rate**: The probability of stumbling upon a feasible trajectory randomly is extremely low.
 
 3. **Limited Demonstration Episodes:**
 
-- **Cost of Collection**: Amassing a large dataset of demonstrations is both time-consuming and expensive.
+  - **Cost of Collection**: Amassing a large dataset of demonstrations is both time-consuming and expensive.
 
 #### Solutions
 To tackle these challenges, EasyTeaching introduces a multi-faceted approach:
@@ -56,57 +56,61 @@ To tackle these challenges, EasyTeaching introduces a multi-faceted approach:
 
 - **Latent Space Representation:** Uses Variational Autoencoders (VAEs) to encode high-dimensional sensory inputs (e.g., RGB-D images) into a compact latent space, reducing computational overhead and mitigating image ambiguity.
 
+### Methodology
+
 
 #### The overview of the proposed method is shown in following figure. 
 ![Overview of the traing method](./images/overview.png)
 
-The method is seperated into three parts:
-1. The sucessed task trajectory evaluation and optimal trajectory generation with explicit method. 
-2. A reinforcement learning based task exploration and learn from the demonsrated data. 
-3. To avoid the ambiguity of image input, we introduced the latent space for the goal generation and robot state representation.
+1. **Keyframe Extraction and Evaluation**
+The process begins with modeling the task as a shortest path problem—from the initial state to the goal state—using dynamic programming-based reinforcement learning. Three types of data points are considered:
 
-Our approach leverages keyframe identification to train policies via reinforcement learning. These policies generate new trajectories that classify new training data for keyframe identification. To reduce computational load and exploration ambiguity, we condense image features into a latent space using the latent space module. This module is trained separately to optimize performance.
+  - **Operator Inputs (Green Dots):** Indicate the intended movement.
 
-#### Keyframe evaluation from demonstrated task episode. 
+  - **Robot Trajectories (Blue Dots):** Recorded paths from the robot controller.
 
-We employed a keyframe evaluation approach that involves modeling the task as a shortest path problem from the start state to the goal state. To solve this problem, we utilized a dynamic programming-based reinforcement learning method.
+  - **Evaluated Keyframes (Red Dots):** Crucial points identified to guide the learning process.
+
+  > Note: The misalignment between operator inputs and robot trajectories highlights the need for refining human demonstrations to better suit robotic control.
 
 <img src="./images/problem-discription.png" width="600" /> 
 
+2. **Reinforcement Learning Framework**
+The dual-policy framework comprises:
 
+  - **Keyframe Policy:** Responsible for determining the optimal keyframe given the current robot state and the desired final state.
 
-The illustration depicts three types of data points: 
-* Green dots: Operator inputs that guide the robot's movement. 
-* Blue dots: Robot trajectories collected from the robot controller. 
-* Red dots: Evaluated keyframes for the task.
+  - **Primitive Policy:** Generates the low-level actions required to transition from the current state to the determined keyframe.
 
-Notably, the green dots have drifted away from the blue dots, indicating that human operators teleoperated the robot and fine-tuned its movement while performing the task.
-
-#### The reinforcement learning framework.
-
-Our reinforcement learning framework consists of two policies: a keyframe policy and a primitive policy.
-
-The keyframe policy is trained to generate the optimal keyframe for a task given the current state and final goal state. In contrast, the primitive policy learns to generate actions for the robot to execute by considering the current state and the keyframe as a subgoal of the task.
-
-To facilitate learning, we employ a latent space module that encodes states, subgoals, and goals into a compact representation. This allows our policies to make informed decisions based on the relationships between these entities.
-
-The framework is shown in following figure. 
+Both policies benefit from a latent space module that fuses state, subgoal, and goal representations, thereby simplifying the decision-making process.
 
 ![The reinforcement learning framework](./images/reinforcement-learning.png)
 
+3. **Latent Space Generation**
+The latent space module is trained with a VAE on a dataset that includes both human demonstration and robot exploration data. This transformation:
 
+  - **Reduces Dimensionality:** Condenses high-dimensional sensory inputs to a manageable latent representation.
 
-#### The latent space generation.
-
-Our latent space module is trained using Variational Autoencoders (VAEs) to reduce the search domain for robot exploration. This allows us to condense high-dimensional sensory inputs into a lower-dimensional representation.
-
-To achieve this, we trained our VAE model on a dataset consisting of data collected during both human demonstrations and robot explorations. This enables the latent space module to learn meaningful representations that can effectively guide the robot's exploration strategy.
+  - **Enhances Exploration:** Focuses the reinforcement learning process on the most relevant features, improving both learning speed and policy performance.
 
 ![The latent space generation.](./images/latent-space.png)
 
 
-#### Experiments and Results 
-Use this method, we did the experiment with the excavation task. 
+
+#### Experimental Evaluation
+
+**Application to Excavation Tasks**
+The framework was validated through a series of experiments on an excavation task. Two key phases were tested:
+
+1. **Human-Operated Demonstrations:** Operators guided the robot to perform the task, providing the initial demonstration data.
+
+2. **Autonomous Robot Operation:** The trained policies were then deployed for autonomous operation.
+
+**Results:**
+
+- The method demonstrated a high success rate compared to existing approaches.
+
+- Ablation studies on the length of the latent space confirmed the robustness of the approach, highlighting the balance between representation detail and computational efficiency.
 
 ##### Human operated task demonstration 
 <img src="./images/image37.gif" width="500" />\
@@ -124,13 +128,20 @@ Use this method, we did the experiment with the excavation task.
 ![Ablation Study.](./images/ablation-study.png)
 
 
-### Future work
-
-The latent space and demonstration can be replaced with CLIP image encoder and language encoder. Will explore more on the LLM powered robot learning. 
+### Future Directions
 
 
-### Paper
-We have submitted this work to the Journal of Computing in Civil Engineering with the following title. The article is accepted and will be published soon. I will update the link after the paper is published. A manuscript of the paper is in the repo. This maynot be the final version. 
+Further enhancements to EasyTeaching include:
+
+- **Integration of Advanced Encoders:** Replacing the current latent space module with CLIP-based image and language encoders to incorporate contextual and semantic understanding.
+
+- **Expanding to Broader Tasks:** Extending the methodology to more diverse manipulation tasks across different domains.
+
+### Published Work
+
+The work has been submitted to the Journal of Computing in Civil Engineering under the title:
+
+**Teleoperation-Driven and Keyframe-Based Generalizable Imitation Learning for Construction Robots**
 
 [paper](manuscript.pdf)
 
