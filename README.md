@@ -110,13 +110,13 @@ The teleoperation system is a critical component of the EasyTeaching framework, 
 To elabrate our teleoperation system, the detailed desgin based on ROS structure is showing in following picture. Our system contains a VR system(HTC VIVE), a monitoring sensor (real-sense D450i), a powerfull computing unit equipt with RTX Titan, and an AUBO i3 robot. 
 The real setup is showing in following picture. 
 <p align="center">
-  <img src="./images/teleop-structure.png" width="568"/> <img src="./images/image52.png" width="568"/> 
+  <img src="./images/teleop-structure.png" width="368"/> <img src="./images/image52.png" width="368"/> 
 </p>
 
 The control operation biopise in showing in following images. 
 
 <p align="center">
-  <img src="./images/image35.gif" width="280"/><img src="./images/image36.gif" width="280"/> 
+  <img src="./images/image35.gif" width="368"/><img src="./images/image36.gif" width="368"/> 
 </p>
 
 ### Experimental Evaluation
