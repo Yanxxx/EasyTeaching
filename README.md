@@ -95,7 +95,26 @@ The latent space module is trained with a VAE on a dataset that includes both hu
 </p>
 
 
-#### Experimental Evaluation
+### Experimental Evaluation
+
+#### Tele-Operation Build
+
+To elabrate our teleoperation system, the detailed desgin based on ROS structure is showing in following picture. 
+<p align="center">
+  <img src="./images/teleop-structure.png" /> 
+</p>
+Our system contains a VR system(HTC VIVE), a monitoring sensor (real-sense D450I), a powerfull computing unit equipt with RTX Titan, and an AUBO i3 robot. 
+The real setup is showing in following picture. 
+
+<p align="center">
+  <img src="./images/image52.png" /> 
+</p>
+The control operation biopise in showing in following images. 
+
+<p align="center">
+  <img src="./images/image35.png" /> 
+  <img src="./images/image36.png" /> 
+</p>
 
 **Application to Excavation Tasks**
 The framework was validated through a series of experiments on an excavation task. Two key phases were tested:
