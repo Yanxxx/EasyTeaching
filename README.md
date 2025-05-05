@@ -112,7 +112,7 @@ The real setup is showing in following picture.
 The control operation biopise in showing in following images. 
 
 <p align="center">
-  <img src="./images/image35.png" /><img src="./images/image36.png" /> 
+  <img src="./images/image35.gif" /><img src="./images/image36.gif" /> 
 </p>
 
 **Application to Excavation Tasks**
