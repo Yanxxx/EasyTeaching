@@ -95,25 +95,31 @@ The latent space module is trained with a VAE on a dataset that includes both hu
 </p>
 
 
-### Experimental Evaluation
+### Teleoperation System: The Foundation of Data Collection
+Purpose and Importance
+The teleoperation system is a critical component of the EasyTeaching framework, serving as the primary means of collecting demonstration data. Its design ensures that even non-experts can effectively guide robots through tasks, making the data collection process more accessible and efficient.
 
-#### Tele-Operation Build
+#### System Features
+**User-Friendly Interface:** Designed for intuitive control, allowing operators to guide robots through tasks with minimal training.
 
-To elabrate our teleoperation system, the detailed desgin based on ROS structure is showing in following picture. 
-<p align="center">
-  <img src="./images/teleop-structure.png" width="680"/> 
-</p>
-Our system contains a VR system(HTC VIVE), a monitoring sensor (real-sense D450I), a powerfull computing unit equipt with RTX Titan, and an AUBO i3 robot. 
+**Real-Time Feedback:** Provides immediate visual and haptic feedback to operators, enhancing control precision.
+
+**Data Logging:** Captures comprehensive data, including robot trajectories, sensor readings, and operator inputs, essential for training robust models.
+
+#### System Build
+To elabrate our teleoperation system, the detailed desgin based on ROS structure is showing in following picture. Our system contains a VR system(HTC VIVE), a monitoring sensor (real-sense D450i), a powerfull computing unit equipt with RTX Titan, and an AUBO i3 robot. 
 The real setup is showing in following picture. 
-
 <p align="center">
-  <img src="./images/image52.png" width="680"/> 
+  <img src="./images/teleop-structure.png" width="568"/> <img src="./images/image52.png" width="568"/> 
 </p>
+
 The control operation biopise in showing in following images. 
 
 <p align="center">
-  <img src="./images/image35.gif" /><img src="./images/image36.gif" /> 
+  <img src="./images/image35.gif" width="280"/><img src="./images/image36.gif" width="280"/> 
 </p>
+
+### Experimental Evaluation
 
 **Application to Excavation Tasks**
 The framework was validated through a series of experiments on an excavation task. Two key phases were tested:
