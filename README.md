@@ -1,5 +1,5 @@
 # EasyTeaching: A Keyframe-Driven Framework for Robotic Manipulation Learning
-**Leveraging Limited Human Demonstrations to Enable Versatile Robot Training**
+**Empowering Limited Human Demonstrations to Enable Versatile Robot Training**
 
 This work was done in 2021. 
 
