@@ -136,6 +136,7 @@ The framework was validated through a series of experiments on an excavation tas
 <p align="center">
   <img src="./images/image37.gif" width="500" /> 
 </p>
+
 ##### Trained operation by robot 
  <p align="center">
   <img src="./images/image47.gif" width="500" /> 
