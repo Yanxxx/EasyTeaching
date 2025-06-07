@@ -1,4 +1,4 @@
-# EasyTeaching: A Keyframe-Driven Framework for Robotic Manipulation Learning
+# Few Shot Imitation Learning: A Keyframe-Driven Framework for Robotic Manipulation Learning
 **Empowering Limited Human Demonstrations to Enable Versatile Robot Training**
 
 ### Overview
